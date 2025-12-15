@@ -1,7 +1,60 @@
+# ATM Group Project Instructions
+
 We have five parts and each part has a group head.
 Please work with them 
- @odiezeani1-ops (kko on whatsapp) im dealing with user account creation and updating
- Motunrayo -insert git username- is dealing with user pin creation
- G14 on whatsapp -insert git username- cash depostion
- madmoseille on whatsapp-insert git username- check balance
- finally Tumininu Rabiu-insert git username- cash withdrawal
+
+- **@odiezeani1-ops** (kko on whatsapp) - dealing with user account creation and updating
+- **Motunrayo** - 🟣 insert git username 🟣 - dealing with user pin creation
+- **G14** on whatsapp - 🟣 insert git username 🟣 - cash depostion
+- **madmoseille** on whatsapp - 🟣 insert git username 🟣 - check balance
+- **Tumininu Rabiu** - 🟣 insert git username 🟣 - cash withdrawal
+
+## How to Get Started
+
+To add a file click on the plus icon on the left panel and select new file.
+Name the file according to your part.
+
+For example if you are dealing with user account creation and updating name the file `user_account_creation_and_updating.py`
+
+After creating the file start coding your part.
+
+## Committing Your Changes
+
+After you are done with your part commit the changes by clicking on the check mark icon on the left panel.
+Write a short description of what you have done and click on commit.
+
+You can also do this from vscode by opening the terminal and typing:
+```bash
+git commit -m "your message here"
+```
+
+## Pushing Your Changes
+
+After committing your changes push the changes to the remote repository by clicking on the three dots icon on the left panel and selecting push.
+
+Or use the terminal:
+```bash
+git push
+```
+
+Once you have pushed your changes notify your group head.
+
+## Before You Start
+
+Make sure to pull the latest changes from the remote repository before you start working on your part to avoid merge conflicts.
+
+To do this open the terminal and type:
+```bash
+git pull
+```
+
+## Merge Conflicts
+
+If you encounter any merge conflicts please reach out to your group head for assistance.
+
+## Creating a Feature Branch
+
+If you want to test, debug or add new features without affecting the main branch you can create another branch by using:
+```bash
+git checkout -b branch-name
+```
