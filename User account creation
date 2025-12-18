@@ -1,0 +1,11 @@
+#This part deals with user account creation for the ATM
+import csv
+print("Welcome to to the first segment of the ATM system")
+option= ""
+def entrance(x):
+    x = input("Do you have an account with us? (yes/no): ").strip().lower()
+    if x == 'no':
+        print("Let's create an account for you.")
+
+
+entrance(option)
