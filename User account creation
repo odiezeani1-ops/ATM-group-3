@@ -5,7 +5,36 @@ option= ""
 def entrance(x):
     x = input("Do you have an account with us? (yes/no): ").strip().lower()
     if x == 'no':
-        print("Let's create an account for you.")
-
+        while True:
+         print("Let's create an account for you.")
+         with open('users.csv', mode='a', newline='') as file:
+             writer =csv.writer(file,delimiter=',')
+             username = str(input("Enter the username you would like to use:")).lower()
+             password = input("Enter your password it must be at least five characters long:")
+             if len(password) < 5:
+                print('Too short must be more than five characters')
+                continue
+             else:
+              password2 = input('Re-enter your password:')
+              if password == password2:
+                writer.writerow([username,password])
+                print("Account created successfully!")
+                break
+              else:
+                 print("Passwords do not match. Please try again.")
+                 continue
+    if x== 'yes':
+        print("Welcome back please enter your username and password")
+        usernametoenter= str(input("Please enter your username:"))
+        passwordtoenter= str(input("Please enter your password:"))
+        with open('users.csv', mode='r') as file:
+            reader = csv.reader.(file, delimeter=',')
+            for row in reader:
+                if row== [username,password]:
+                    print("You are logged in")
+                else:
+                    print("Try again")
+entrance(option)
 
 entrance(option)
+
