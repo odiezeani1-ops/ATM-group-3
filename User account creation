@@ -28,13 +28,13 @@ def entrance(x):
         usernametoenter= str(input("Please enter your username:"))
         passwordtoenter= str(input("Please enter your password:"))
         with open('users.csv', mode='r') as file:
-            reader = csv.reader.(file, delimeter=',')
+            reader = csv.reader(file, delimeter=',')
             for row in reader:
-                if row== [username,password]:
+                if row== [usernametoenter,passwordtoenter]:
                     print("You are logged in")
                 else:
                     print("Try again")
 entrance(option)
 
-entrance(option)
+
 
