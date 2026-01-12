@@ -10,7 +10,10 @@ def update_balance(username, new_balance):
         reader = csv.reader(file, delimiter=',')
         for row in reader:
             if row[0] == username:
-                row[3] = str(new_balance)  # Update balance
+                if len(row) < 4:
+                    row.append(str(new_balance))  # Add balance if missing
+                else:
+                    row[3] = str(new_balance)  # Update balance
             rows.append(row)
     with open('users.csv', mode='w', newline='') as file:
         writer = csv.writer(file, delimiter=',')
@@ -39,7 +42,7 @@ def entrance(x):
             else:
                 password2 = input('Re-enter your password:')
                 if password == password2:
-                    balance1 = 0
+                    balance1 = 0.0
                     pin = random.randint(1000, 9999)
                     print(f"Your generated pin is: {pin}. Please remember it for future logins.")
                     with open('users.csv', mode='a', newline='') as file:
@@ -50,6 +53,8 @@ def entrance(x):
                     print("Passwords do not match. Please try again.")
                     continue
     if x == 'yes':
+        global current_user
+        current_user = ''
         print("Welcome back please enter your username and password")
         usernametoenter= str(input("Please enter your username:"))
         passwordtoenter= str(input("Please enter your password:"))
@@ -60,7 +65,7 @@ def entrance(x):
             for row in reader:
                 if row[0] == usernametoenter and row[1] == passwordtoenter and row[2] == pintoenter:
                     pin = int(row[2])
-                    balance1 = int(row[3])
+                    balance1 = float(row[3]) if len(row) > 3 else 0.0
                     current_user = usernametoenter  # Store the username
                     print("You are logged in")
                     logged_in = True
@@ -82,10 +87,15 @@ else:
     if selection == "B":
         import Cash_Deposit
         accounts[given_pin] = Cash_Deposit.deposit(accounts[given_pin])
-        update_balance(current_user, accounts[given_pin])  # Update the balance in CSV
+        update_balance(current_user, accounts[given_pin])  # Update the balance in CSV    
     elif selection == "C":
         print("Your balance is:", accounts[given_pin])
-
+    elif selection == "D":
+        import Cash_Withdraw
+        accounts[given_pin] = Cash_Withdraw.withdraw(accounts[given_pin])
+        update_balance(current_user, accounts[given_pin])  # Update the balance in CSV
+    else:
+        print("Have sense...")
 
 
 

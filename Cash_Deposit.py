@@ -1,5 +1,6 @@
+import csv
 def deposit(balance):
-    deposit_amount = int(input("Enter amount to deposit: "))
+    deposit_amount = float(input("Enter amount to deposit: "))
     if deposit_amount > 0:
         balance += deposit_amount
         print("Deposit successful")
