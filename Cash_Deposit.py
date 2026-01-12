@@ -1,9 +1,9 @@
 def deposit(balance):
- balance = 5000 
- deposit = int(input("Enter amount to deposit: "))
- if deposit > 0:
-      balance = balance + deposit 
-       print("Deposit successful")
-       print("Your new balance is:", balance)
- else:
-       print("Invlid deposit amount")
+    deposit_amount = int(input("Enter amount to deposit: "))
+    if deposit_amount > 0:
+        balance += deposit_amount
+        print("Deposit successful")
+        print("Your new balance is:", balance)
+    else:
+        print("Invalid deposit amount")
+    return balance
